@@ -1,0 +1,11 @@
+{
+  "name": "jekyll-tailwindcss-boilerplate",
+  "version": "1.0.0",
+  "private": "true",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^5.1.15",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7"
+  }
+}
