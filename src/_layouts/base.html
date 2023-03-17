@@ -18,13 +18,14 @@
     />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     
-    {% for css in page.css %} {% assign assets_path = '/assets/css/{{css}}' %}
-    <link rel="stylesheet" href="{{ assets_path | append: cache_bust }}" />
+    {% for css in page.css %}
+      {% assign assets_path = '/assets/css/{{css}}' %}
+      <link rel="stylesheet" href="{{ assets_path | append: cache_bust }}" />
     {% endfor %}
   </head>
-  
+
   <body class="antialiased">
     {% include header.html %}
     
@@ -34,6 +35,11 @@
       {% include footer.html %}
     {% endif %}
 
-    <scirpt src="{{ '/assets/js/main.js' | append: cache_bust }}"></scirpt>
+    <script src="{{ '/assets/js/main.js' | append: cache_bust }}"></script>
+
+    {% for js in page.js %}
+      {% assign assets_path = '/assets/js/{{js}}' %}
+      <script src="{{ assets_path | append: cache_bust }}"></script>
+    {% endfor %}
   </body>
 </html>
